@@ -13,7 +13,7 @@ public class Persona {
         nombre = n;
         tarjeta = e;
     }
-    
+        
     public void establecerNombre(String n){
         nombre = n;
     }

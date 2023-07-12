@@ -4,9 +4,17 @@
  */
 package paquete11;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import static paquete11.LeerDatos.leer;
+
 public class Principal {
+
     public static void main(String[] args) {
-        
+
         /*
         Usar el txt llamado usuarios.txt; por cada línea del archivo
         crer un API en función de su servicio; además el API ahora genera
@@ -15,8 +23,15 @@ public class Principal {
         Random); la url final debe contener el tipo de servicio y el user
         Por cada objeto de tipo GeneradoPelicula presentar la información 
         a través de un toString
-        */
+         */
+        
+        ArrayList<String> lista = new ArrayList();
         
         
+        String mensaje = leer();
+        System.out.println(mensaje);
+
+       
+
     }
 }

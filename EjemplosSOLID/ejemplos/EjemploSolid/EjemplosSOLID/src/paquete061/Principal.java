@@ -1,6 +1,6 @@
-/*
+/* 
  * L — Liskov substitution principle (Principio de sustitución de Liskov) 
- */
+ */ 
 package paquete061;
 
 import java.util.ArrayList;
