@@ -7,6 +7,7 @@ package paquete11;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,22 +15,22 @@ import java.io.IOException;
  */
 public class LeerDatos {
     
-    public static String leer(){
+    public static ArrayList<String> leer(){
         
-        String mensaje = "";
+        ArrayList<String> lista = new ArrayList();
 
         try ( BufferedReader  lector = new BufferedReader(new FileReader("C:\\Users\\SALA A\\Desktop\\clase05-2bim-ALISrj\\EjemplosSOLID\\ejemplos\\EjemploSolid\\EjemplosSOLID\\datos\\usuarios.txt"))) {
 
-            String i;
-            while ((i = lector.readLine()) != null) {
-                mensaje = String.format("%s%s\n",mensaje, i);
+            String mensaje;
+            while ((mensaje = lector.readLine()) != null) {
+                lista.add(mensaje);
             }
 
         } catch (IOException e) {
             System.out.println("Error: " + e);
         }
     
-        return mensaje;
+        return lista;
     }
     
 }

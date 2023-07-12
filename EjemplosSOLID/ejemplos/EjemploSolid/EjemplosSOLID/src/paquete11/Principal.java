@@ -25,13 +25,17 @@ public class Principal {
         a través de un toString
          */
         
-        ArrayList<String> lista = new ArrayList();
+        ArrayList<String> lista = leer();
         
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.println(lista.get(i));
+        }
         
-        String mensaje = leer();
-        System.out.println(mensaje);
-
+        for (int i = 0; i < lista.size(); i++) {
+            String[] partes = lista.get(i).split(";");
+            System.out.println(partes[0]);
+        }
+        
        
-
     }
 }
