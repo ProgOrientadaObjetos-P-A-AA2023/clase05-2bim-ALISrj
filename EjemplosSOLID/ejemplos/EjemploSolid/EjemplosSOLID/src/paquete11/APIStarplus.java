@@ -14,7 +14,8 @@ public class APIStarplus implements APIMovie{
     
     @Override
     public void establecerApiKey(String ak){
-        apiKey = ak+"STARPLUS909090";
+        int aleatorio = (int)(Math.random() * 100000);
+        apiKey = ak+aleatorio;
     }
     
     @Override

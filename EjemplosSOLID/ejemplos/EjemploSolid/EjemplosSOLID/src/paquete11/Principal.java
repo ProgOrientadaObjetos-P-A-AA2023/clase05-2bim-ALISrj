@@ -4,10 +4,6 @@
  */
 package paquete11;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import static paquete11.LeerDatos.leer;
 
@@ -24,18 +20,53 @@ public class Principal {
         Por cada objeto de tipo GeneradoPelicula presentar la información 
         a través de un toString
          */
-        
         ArrayList<String> lista = leer();
+        ArrayList<GeneradorPelicula> generadores = new ArrayList();
         
         for (int i = 0; i < lista.size(); i++) {
-            System.out.println(lista.get(i));
-        }
-        
-        for (int i = 0; i < lista.size(); i++) {
+            
             String[] partes = lista.get(i).split(";");
-            System.out.println(partes[0]);
+            String ak = partes[1] + partes[2];
+
+            GeneradorPelicula gp = new GeneradorPelicula();
+
+            if ("Netflix".equals(partes[2])) {
+
+                APINetflix api = new APINetflix();
+                api.establecerApiKey(ak);
+                gp.establecerLlave(api);
+
+            } else if ("Disney".equals(partes[2])) {
+
+                APIDisney api = new APIDisney();
+                api.establecerApiKey(ak);
+                gp.establecerLlave(api);
+
+            } else if ("Amazon".equals(partes[2])) {
+
+                APIAmazonMovie api = new APIAmazonMovie();
+                api.establecerApiKey(ak);
+                gp.establecerLlave(api);
+
+            } else if ("Startplus".equals(partes[2])) {
+
+                APIStarplus api = new APIStarplus();
+                api.establecerApiKey(ak);
+                gp.establecerLlave(api);
+
+            }
+
+            gp.establecerUrl("http://api.movie?api=");
+
+            generadores.add(gp);
+
         }
-        
-       
+
+        for (GeneradorPelicula generador : generadores) {
+
+            System.out.printf("%s\n", generador);
+
+        }
+
     }
 }

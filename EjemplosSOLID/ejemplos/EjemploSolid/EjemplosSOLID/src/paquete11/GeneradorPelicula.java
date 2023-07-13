@@ -27,4 +27,10 @@ public class GeneradorPelicula {
         return url;
     }
     
+    @Override
+    public String toString(){
+        return String.format("LLave: %s\n"
+                + "Url: %s\n",llave.obtenerApiKey(),url);
+    }
+    
 }

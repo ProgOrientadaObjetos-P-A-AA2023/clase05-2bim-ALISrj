@@ -14,7 +14,8 @@ public class APIDisney implements APIMovie{
     
     @Override
     public void establecerApiKey(String ak){
-        apiKey = ak+"DISNEY909090";
+        int aleatorio = (int)(Math.random() * 100000);
+        apiKey = ak+aleatorio;
     }
     
     @Override

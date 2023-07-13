@@ -19,12 +19,14 @@ public class LeerDatos {
         
         ArrayList<String> lista = new ArrayList();
 
-        try ( BufferedReader  lector = new BufferedReader(new FileReader("C:\\Users\\SALA A\\Desktop\\clase05-2bim-ALISrj\\EjemplosSOLID\\ejemplos\\EjemploSolid\\EjemplosSOLID\\datos\\usuarios.txt"))) {
+        try ( BufferedReader  lector = new BufferedReader(new FileReader("datos\\usuarios.txt"))) {
 
             String mensaje;
             while ((mensaje = lector.readLine()) != null) {
                 lista.add(mensaje);
             }
+                
+            lector.close();
 
         } catch (IOException e) {
             System.out.println("Error: " + e);
