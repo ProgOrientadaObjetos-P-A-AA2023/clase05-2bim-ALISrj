@@ -26,9 +26,14 @@ public class Principal {
         for (int i = 0; i < lista.size(); i++) {
             
             String[] partes = lista.get(i).split(";");
-            String ak = partes[1] + partes[2];
+            
+            String usuario = partes[1];
+            String tipo = partes[2];
+            
+            String ak = usuario + tipo;
 
             GeneradorPelicula gp = new GeneradorPelicula();
+            gp.establecerUser(usuario);
 
             if ("Netflix".equals(partes[2])) {
 
