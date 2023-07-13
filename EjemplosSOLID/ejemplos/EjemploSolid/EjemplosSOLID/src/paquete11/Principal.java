@@ -27,6 +27,7 @@ public class Principal {
             
             String[] partes = lista.get(i).split(";");
             
+            
             String usuario = partes[1];
             String tipo = partes[2];
             
